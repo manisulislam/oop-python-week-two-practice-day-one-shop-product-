@@ -26,7 +26,7 @@ class Product:
 class Shop:
 
     # initialization
-    def __init__(self, name):
+    def __init__(self):
         self.store=[]
        
     
@@ -39,27 +39,28 @@ class Shop:
             print(f"invalid product..")
     
     # buy_product
-    def buy_product(self, product_name):
+    def buy_product(self, pro_name):
         
         for item in self.store:
-            if item.name==product_name and item.quantity>0:
-                congrats=f"congratualations..{item.product_name} has found"
+            if item.name==pro_name and item.quantity>0:
+                congrats=f"congratualations..{item.name} has found"
                 print(congrats)
+                break
             else:
-                res=f"{item.name} not found"
+                res=f"{pro_name} not found"
                 print(res)
 
 
 
-    
+s= Shop()
 productOne= Product("sunscreen",1001,250,20,30)
 productTwo =Product("eyecream",1002,300,500,20)
 productThree=Product("showergel",1003,600,120,25)
 
-Shop.add_to_product(productOne)
-Shop.add_to_product(productTwo)
-Shop.add_to_product(productThree)
+s.add_to_product(productOne)
+s.add_to_product(productTwo)
+s.add_to_product(productThree)
 
-Shop.buy_product("sunscreen")
+s.buy_product("sunscreen")
 
 
